@@ -16,11 +16,10 @@ vector<string> readLinesFromFile(const string& filename) {
     while (getline(file, line)) {
         lines.push_back(line);
     }
-    cout << "Прочитано " << lines.size() << " строк" << endl;
-    for (int i = 0; i < lines.size(); i++) {
-        cout << "  Строка " << i << ": " << lines[i] << endl;
-    }
-
+    //cout << "Прочитано " << lines.size() << " строк" << endl;
+    //for (int i = 0; i < lines.size(); i++) {
+    //    cout << "  Строка " << i << ": " << lines[i] << endl;
+    //}
     return lines;
 }
 
