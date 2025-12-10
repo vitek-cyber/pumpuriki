@@ -28,14 +28,15 @@ int main() {
 
     cout << "Программа для работы с текстовыми файлами" << endl;
 
-    // Функция 1: Чтение из файла
-    vector<string> lines = readLinesFromFile("input.txt");
+    // ВРЕМЕННО: тестовые данные для отладки функций 2 и 3
+    vector<string> testLines = { "Строка 1", "Строка 2", "Строка 3", "Тестовая строка" };
 
     // Функция 2: Вывод на экран
-    printLinesToConsole(lines);
+    printLinesToConsole(testLines);
 
     // Функция 3: Запись в файл
-    writeLinesToFile(lines, "output.txt");
+    writeLinesToFile(testLines, "output.txt");
+
 
     cout << "Программа завершена" << endl;
     return 0;
