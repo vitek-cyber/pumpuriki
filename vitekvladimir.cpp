@@ -1,23 +1,34 @@
-п»ї#include <iostream>
+#include <iostream>
 #include <vector>
 #include <string>
 #include <fstream>
 
 using namespace std;
 
-// Р¤СѓРЅРєС†РёСЏ 1: Р§С‚РµРЅРёРµ СЃС‚СЂРѕРє РёР· С„Р°Р№Р»Р° РІ РІРµРєС‚РѕСЂ
+// Функция 1: Чтение строк из файла в вектор
 vector<string> readLinesFromFile(const string& filename) {
+    setlocale(LC_ALL, "Russian");
     vector<string> lines;
-    
+
+    ifstream file(filename);
+
+    string line;
+    while (getline(file, line)) {
+        lines.push_back(line);
+    }
+    //cout << "Прочитано " << lines.size() << " строк" << endl;
+    //for (int i = 0; i < lines.size(); i++) {
+    //    cout << "  Строка " << i << ": " << lines[i] << endl;
+    //}
     return lines;
 }
 
-// Р¤СѓРЅРєС†РёСЏ 2: Р’С‹РІРѕРґ СЃС‚СЂРѕРє РЅР° СЌРєСЂР°РЅ
+// Функция 2: Вывод строк на экран
 void printLinesToConsole(const vector<string>& lines) {
     
 }
 
-// Р¤СѓРЅРєС†РёСЏ 3: Р—Р°РїРёСЃСЊ СЃС‚СЂРѕРє РІ С„Р°Р№Р»
+// Функция 3: Запись строк в файл
 void writeLinesToFile(const vector<string>& lines, const string& filename) {
     
 }
@@ -26,17 +37,17 @@ int main() {
 
     setlocale(LC_ALL, "Russian");
 
-    cout << "РџСЂРѕРіСЂР°РјРјР° РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ С‚РµРєСЃС‚РѕРІС‹РјРё С„Р°Р№Р»Р°РјРё" << endl;
+    cout << "Программа для работы с текстовыми файлами" << endl;
 
-    // Р¤СѓРЅРєС†РёСЏ 1: Р§С‚РµРЅРёРµ РёР· С„Р°Р№Р»Р°
+    // Функция 1: Чтение из файла
     vector<string> lines = readLinesFromFile("input.txt");
 
-    // Р¤СѓРЅРєС†РёСЏ 2: Р’С‹РІРѕРґ РЅР° СЌРєСЂР°РЅ
+    // Функция 2: Вывод на экран
     printLinesToConsole(lines);
 
-    // Р¤СѓРЅРєС†РёСЏ 3: Р—Р°РїРёСЃСЊ РІ С„Р°Р№Р»
+    // Функция 3: Запись в файл
     writeLinesToFile(lines, "output.txt");
 
-    cout << "РџСЂРѕРіСЂР°РјРјР° Р·Р°РІРµСЂС€РµРЅР°" << endl;
+    cout << "Программа завершена" << endl;
     return 0;
 }
